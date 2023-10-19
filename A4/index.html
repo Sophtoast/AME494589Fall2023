@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<script src='asyncReq.js'></script>
+<script>
+function updateData()
+{
+  loadURL("./getData", function(data){
+    document.getElementById("results").innerHTML = data;
+  })
+}
+function start()
+{
+  setInterval("updateData()", 300);
+}
+</script>
+</head>
+<body onload='start()'>
+<h1> Temperature/Humidity</h1>
+<div id='results'> </div>
+
+<div id="turorial">
+  <h2> Step 1</h2>
+  <p> Start by creating an EC2 server on AWS by pressing the EC2 buttonon the home page.
+    Then go to Instances (running) page and select the "Launch Instance"  button on the right. </p>
+
+    <h2> Step 2:</h2>
+    <p> From here a page will open with serval different settings. Go to the OS and change it to <b>Unbuntu</b>.</p>
+      <p> Choose <b>Unbuntu Server </b>20.04<b> as the Amazon Machine Image.</p>
+        <p> Change the key pair to "Proceed without a key pair"</p>
+        <p> Change the configuration on the bottom of the page to <b>1x28</b></p>
+        <p> Finally press the <b>Launch Instance</b> at bottom of the page.</p>
+
+        <h2> Step 3:</h2>
+        <p> Now select your newly created instance. Scroll down and select the security tab. Select launch wizard and go into the inbound rules. </p>
+        <p> Press "edit Inbound Rules" by pressing "add rule" to change the port range on both. </p>
+        <p> Add "8080" and change the source to "Anywhere IPV4". Then add "1234" and chnage source "Anywhere IPV4."</p>
+        <p> Press save Rules to apply to Instance & return to the instnace page.</p>
+
+        <h2> Step 4:</h2>
+        <p> Go to your Instance summary and press connect. Enter the following commands to the HYYPServer.</p>
+        <p> Curl Bash command the class repo link</p>
+        <p> Npm install </p>
+        <p> npm install latest</p>
+        <p> sudo npm install -g n</p>
+        <p> sudo npm install -g http-server</p>
+        <p>Now you will clone the GitHub Repo via "git clone" plus the class link.</p>
+
+        <h2>Step 5:</h2>
+        <p> Now that you have cloned your GitHub, use ls & cd commands to navigate the server.js file.</p>
+        <p> Once there type node server.js to start running the server.</p>
+        <p> To view the server write the public IP with 8080/ at the end.</p>
+
+        <h2>Step 6:</h2>
+        <p> To make the TTGo Watch work, open the file DHT11Default in Arduino.</p>
+        <p> Check that he port is TTGo Watch and the watchUSB is connected with the temp sensor.</p>
+        <p> Make sure theblue light is on.</p>
+        <p> Upload any other needed files on to the watch & change the wifi & password to hotspot info.</p>
+        <p> Now change the URL to your Public IP address.</p>
+        <p> Make sure to change your pin to 25.</p>
+        <p> Finally upload the code & said temp should display on the web page.</p>
+
+
+
+</div>
+
+</body>
+</html>
